@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 // Layout head/imports
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import Link from "next/link";
 
 // **Fonts
 const geistSans = Geist({
@@ -34,9 +34,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <nav className="navbar navbar-expand-lg">
           <div className="d-flex container-fluid p-0">
-            <a className="navbar-brand" href="#">
-              Navbar
-            </a>
+            <Link className="navbar-brand me-5" href="/">
+              Homepage
+            </Link>
+
+            {/* NavBar Button */}
             <button
               className="navbar-toggler hamburgerMenuButton"
               style={{ border: "none", boxShadow: "none" }}
@@ -47,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
+              {/* Button ICON */}
               <span className="">
                 <i
                   className="bi bi-list hamburgerMenu"
@@ -54,20 +57,36 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 ></i>
               </span>
             </button>
+
+            {/* Content Navbar */}
             <div
               className="collapse navbar-collapse  "
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 flex-row gap-4">
+                {/* ProjectsPage */}
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    Home
-                  </a>
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    href="/Projects"
+                  >
+                    Projects
+                  </Link>
                 </li>
+
+                {/* About Me PAge */}
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Link
-                  </a>
+                  <Link className="nav-link" href="AboutMe">
+                    About Me
+                  </Link>
+                </li>
+
+                {/* Contact Me Page */}
+                <li className="nav-item">
+                  <Link className="nav-link" href="ContactMe">
+                    Contact Me
+                  </Link>
                 </li>
               </ul>
             </div>

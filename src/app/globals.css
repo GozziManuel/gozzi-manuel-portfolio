@@ -2,6 +2,7 @@
 :root {
   --background: #0a0a0a;
   --textcolor: #ededed;
+  --textColorSecondary: rgb(182, 181, 181);
 }
 
 /* Css preset */
@@ -65,4 +66,10 @@ a {
 
 .hamburgerMenu {
   font-size: 30px;
+}
+
+/* NavLink */
+
+.nav-link {
+  color: var(--textColorSecondary) !important;
 }
