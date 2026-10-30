@@ -57,3 +57,9 @@
 .mySkill p {
   color: var(--borderColor);
 }
+
+/* MARQUE CSS */
+
+.Marque {
+  background: var(--secondaryColor);
+}

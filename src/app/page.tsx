@@ -1,5 +1,6 @@
 import "./indexpage.css";
 import { anton } from "./fonts/font";
+import TechMarquee from "./components/TechMarquee";
 
 export default function Home() {
   return (
@@ -132,6 +133,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="Marquee">
+        <TechMarquee />
       </section>
     </main>
   );
