@@ -1,0 +1,49 @@
+@import url("globals.css");
+
+.black {
+  color: var(--transparentblack);
+}
+.blue {
+  color: var(--secondaryColor);
+}
+
+/* MAINPhoto */
+
+.PhotoContainer {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  border-radius: 1000px;
+  border: var(--secondaryColor) dashed 2px;
+}
+
+.Photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 1000px;
+  object-fit: cover;
+}
+
+/* Buttons */
+
+.buttonMain {
+  background-color: var(--transparentblack);
+  color: var(--buttonColorText) !important;
+  padding: 15px 30px;
+  border-radius: 0 !important;
+  font-size: 12px;
+  letter-spacing: 1.3px;
+  transition: all 0.2s ease-in-out;
+}
+.buttonMain:hover {
+  background-color: var(--secondaryColor);
+}
+.arrowAnimation {
+  transform: translateX(0);
+  font-size: 15px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+.buttonMain:hover .arrowAnimation {
+  transform: translateX(4px);
+}
