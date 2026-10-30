@@ -5,6 +5,7 @@
   --secondaryColor: #2b3fd6;
   --transparentblack: rgba(0, 0, 0, 0.904);
   --buttonColorText: #f4f2ec;
+  --borderColor: #888888;
 }
 
 /* Css preset */
@@ -56,7 +57,7 @@ a {
 /* NavBar */
 
 .navbar-custom {
-  background-color: rgba(244, 243, 237, 0.9);
+  background-color: var(--background);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);

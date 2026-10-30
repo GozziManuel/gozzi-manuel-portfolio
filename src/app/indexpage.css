@@ -47,3 +47,13 @@
 .buttonMain:hover .arrowAnimation {
   transform: translateX(4px);
 }
+
+/* Myskill section */
+
+.mySkill {
+  background-color: var(--transparentblack);
+}
+
+.mySkill p {
+  color: var(--borderColor);
+}
