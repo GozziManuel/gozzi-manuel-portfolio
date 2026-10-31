@@ -1,0 +1,20 @@
+/* NavBAR main Style */
+
+.navbar-custom {
+  background-color: var(--background);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+/*  */
+#navContainer {
+  width: 70%;
+}
+
+/* Media For nav */
+@media (max-width: 1400px) {
+  .navContainer {
+    width: 96% !important;
+  }
+}

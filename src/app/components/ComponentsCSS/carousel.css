@@ -1,0 +1,45 @@
+/* Carousel */
+.CarouselContainer {
+  overflow: hidden;
+  position: relative;
+  border: solid 1px black;
+}
+.CarouselPhoto {
+  filter: grayscale(80%);
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.5s ease-in-out,
+    filter 0.5s ease-in-out;
+}
+.ColContainerCarousel:hover .CarouselPhoto {
+  transform: scale(1.02);
+  filter: none;
+}
+.ProjectNameBadge {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--background);
+  left: 5%;
+  top: 88%;
+  width: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* ARROW FOR CAROUSEL */
+.arrowAnimationCarousel {
+  transform: translateX(0);
+  color: var(--secondaryColor);
+  font-size: 15px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+.ColContainerCarousel:hover .arrowAnimationCarousel {
+  transform: translateX(4px);
+}

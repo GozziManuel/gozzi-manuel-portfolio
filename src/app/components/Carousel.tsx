@@ -1,6 +1,7 @@
 //
 "use client";
 
+import "./ComponentsCSS/carousel.css";
 import { useEffect, useState } from "react";
 import { anton } from "../fonts/font";
 import Link from "next/link";

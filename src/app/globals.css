@@ -9,11 +9,14 @@
 }
 
 /* Css preset */
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+a {
+  color: var(--textcolor) !important;
+  text-decoration: none;
 }
 
 /* Html & body preset  */
@@ -32,6 +35,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* **** MAIN CONTAINER *** */
 .ContainerBody {
   width: 70%;
   display: flex;
@@ -39,30 +43,10 @@ body {
   justify-content: center;
   padding-top: 100px;
 }
-/* Media For body */
+
+/* MAIN CONTAINER RESPONSIVE */
 @media (max-width: 1400px) {
   .ContainerBody {
     width: 96% !important;
   }
-  .navContainer {
-    width: 96% !important;
-  }
-}
-
-/* Reset For Links */
-a {
-  color: var(--textcolor) !important;
-  text-decoration: none;
-}
-
-/* NavBar */
-
-.navbar-custom {
-  background-color: var(--background);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgb(0, 0, 0);
-}
-#navContainer {
-  width: 70%;
 }
