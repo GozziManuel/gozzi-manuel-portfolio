@@ -33,9 +33,10 @@ body {
 }
 
 .ContainerBody {
-  width: 65%;
+  width: 70%;
   display: flex;
   margin: 0 auto;
+  justify-content: center;
   padding-top: 100px;
 }
 /* Media For body */
@@ -63,5 +64,5 @@ a {
   border-bottom: 1px solid rgb(0, 0, 0);
 }
 #navContainer {
-  width: 65%;
+  width: 70%;
 }

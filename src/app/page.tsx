@@ -1,6 +1,7 @@
 import "./indexpage.css";
 import { anton } from "./fonts/font";
 import TechMarquee from "./components/TechMarquee";
+import Carousel from "./components/Carousel";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         style={{ marginBottom: "150px" }}
       >
         <div className="container-fluid max-width-container pt-4 pt-lg-5">
-          <div className="row align-items-center gy-5">
+          <div className="row align-items-center gy-5 justify-content-center">
             {/* <!-- Left Text Column --> */}
             <div className="col-12 row">
               <div className="col-lg-3 col-12 col-md-3">
@@ -47,15 +48,19 @@ export default function Home() {
                     className="buttonMain"
                   >
                     <span className="me-2">SCRIVIMI SU WHATSAPP</span>
-                    <i className="bi bi-arrow-right-short arrowAnimation"></i>
+                    <i className="bi bi-arrow-right arrowAnimation"></i>
                   </a>
                 </div>
               </div>
               {/* <!-- Main  Photo --> */}
 
-              <div className=" col-lg-3 col-12 col-md-3 d-flex justify-content-md-center align-items-md-center">
-                <div className="PhotoContainer">
-                  <img src="/photo.jpg" alt="Me" className="Photo" />
+              <div className=" col-lg-3 col-12 col-md-3 d-flex justify-content-md-center align-items-md-center ">
+                <div className="PhotoContainer ">
+                  <img
+                    src="/photo.jpg"
+                    alt="Me"
+                    className="Photo rotating-border "
+                  />
                 </div>
               </div>
             </div>
@@ -68,8 +73,8 @@ export default function Home() {
         id=""
         className=" w-100 mySkill mx-0 "
         style={{
-          paddingTop: "120px",
-          paddingBottom: "120px",
+          paddingTop: "100px",
+          paddingBottom: "100px",
           color: "var(--buttonColorText)",
         }}
       >
@@ -116,6 +121,7 @@ export default function Home() {
             {/* 1° */}
             <div
               className="col-12 py-4 "
+              // Styling border
               style={{
                 borderTop: "solid 1px var(--borderColor)",
                 borderBottom: "solid 1px var(--borderColor)",
@@ -136,6 +142,11 @@ export default function Home() {
       </section>
       <section className="Marquee">
         <TechMarquee />
+      </section>
+
+      {/* SEction For initial Project */}
+      <section className="ProjectSection ContainerBody">
+        <Carousel />
       </section>
     </main>
   );
