@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { anton } from "../fonts/font";
+import { anton } from "../utils/font";
 import "./ComponentsCSS/navbar.css";
 
 //

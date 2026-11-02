@@ -1,4 +1,4 @@
-import { anton } from "../../fonts/font";
+import { anton } from "../../utils/font";
 import "../../indexpage.css";
 
 export default function SkillSection() {

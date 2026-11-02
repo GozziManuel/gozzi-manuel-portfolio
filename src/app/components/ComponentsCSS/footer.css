@@ -1,0 +1,83 @@
+@import url("../../globals.css");
+
+footer {
+  background-color: var(--transparentblack);
+  margin-top: 80px;
+  color: white;
+  padding-top: 90px;
+}
+
+.FooterButton {
+  width: 60%;
+  background-color: var(--secondaryColor);
+  color: white;
+  margin-top: 20px;
+  border: none;
+  font-size: 13px;
+  transition: all 0.5s ease-in-out;
+}
+
+.FooterButton:hover {
+  background-color: white;
+  color: black;
+}
+
+/* arrow BUTOTN */
+.arrowAnimationFooter {
+  transform: translateX(0);
+  font-size: 15px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+.FooterButton:hover .arrowAnimationFooter {
+  transform: translateX(4px);
+  color: black;
+}
+
+/* butotn2 */
+
+/*  */
+.FooterButton2 {
+  width: 60%;
+  background-color: transparent;
+  color: white;
+  margin-top: 20px;
+  border: none;
+  font-size: 13px;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid white;
+}
+
+.FooterButton2:hover {
+  background-color: white;
+  color: black;
+}
+/* arrow BUTOTN */
+.arrowAnimationFooter2 {
+  transform: translateX(0);
+  font-size: 15px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+.FooterButton2:hover .arrowAnimationFooter2 {
+  transform: translateX(4px);
+  color: black;
+}
+
+.LastFooterInfo {
+  color: var(--borderColor);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* Last ARROW */
+.arrowAnimationFooter3 {
+  transform: translateY(0);
+  font-size: 15px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+.LastFooterInfo:hover .arrowAnimationFooter3 {
+  transform: translateY(-4px);
+}

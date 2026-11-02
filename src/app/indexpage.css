@@ -43,6 +43,7 @@
   inset: 0;
   border: 2px dashed var(--secondaryColor);
   border-radius: inherit;
+
   animation: border-dance 130s linear infinite;
 }
 

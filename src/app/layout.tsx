@@ -8,7 +8,8 @@ import Script from "next/script";
 import Navbar from "./components/Navbar";
 
 //
-import { geistSans, geistMono } from "./fonts/font";
+import { geistSans, geistMono } from "./utils/font";
+import Footer from "./components/Footer";
 
 // **Fonts
 
@@ -24,13 +25,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       {/*  */}
       {/*  */}
-      <body>
+      <body className="d-flex flex-column min-vh-100">
         <Navbar />
-        <div className="">{children}</div>
+        <div className="flex-grow-1">{children}</div>
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"
         />
+        <Footer />
       </body>
     </html>
   );

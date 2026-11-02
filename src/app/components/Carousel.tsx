@@ -3,7 +3,7 @@
 
 import "./ComponentsCSS/carousel.css";
 import { useEffect, useState } from "react";
-import { anton } from "../fonts/font";
+import { anton } from "../utils/font";
 import Link from "next/link";
 
 const images = ["/Resonus.png", "/PocketGuide.png", "/Press-Start.png"];
@@ -33,7 +33,11 @@ export default function Carousel() {
           PROGETTI
         </h1>
       </div>
-      <Link className="col-lg-9 col-12 ColContainerCarousel" href="/Projects">
+      <Link
+        className="col-lg-9 col-12 ColContainerCarousel"
+        href="/Projects"
+        style={{ color: "var(--textcolor)" }}
+      >
         <div style={{ cursor: "pointer" }}>
           <div className="CarouselContainer w-100" style={{}}>
             <img

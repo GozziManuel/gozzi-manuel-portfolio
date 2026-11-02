@@ -5,7 +5,7 @@ import "../indexpage.css";
 import "./ComponentsCSS/marquee.css";
 
 import Marquee from "react-fast-marquee";
-import { anton } from "../fonts/font";
+import { anton } from "../utils/font";
 
 const technologies = [
   "MYSQL",
