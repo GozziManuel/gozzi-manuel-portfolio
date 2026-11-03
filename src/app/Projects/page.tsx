@@ -13,7 +13,7 @@ export default function ProjectsPage() {
         {ProjectList.map((el) => {
           return (
             <div
-              className={` ${el.slug === "Resonus" ? "col-8" : "col-6"}`}
+              className={` ${el.slug === "Resonus" ? "col-8 mb-5" : "col-6"}`}
               key={el.slug}
             >
               <Link
