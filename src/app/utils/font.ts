@@ -1,5 +1,6 @@
 import { Anton, Geist, Geist_Mono } from "next/font/google";
 
+// Default Font from NEXT
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -10,6 +11,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Anton Font for title
 const anton = Anton({
   weight: "400",
   subsets: ["latin"],

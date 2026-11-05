@@ -3,17 +3,24 @@ import { anton } from "../utils/font";
 import { ProjectList } from "../utils/project";
 import "./Projectpage.css";
 import "../components/ComponentsCSS/carousel.css";
+import PortFolioCard from "../components/PortFolioCard";
 
 //
 export default function ProjectsPage() {
   return (
     <div className="ContainerBody">
       <div className="d-flex row w-100">
-        <h1 className={`col-4 ${anton.className}`}>I MIEI PROGETTI</h1>
+        <h1
+          className={`col-5 ${anton.className} display-3 col-lg-5 col-12 mb-5 mb-lg-0`}
+        >
+          I MIEI PROGETTI
+        </h1>
+
+        {/* Mapping Projects for Unic project on click */}
         {ProjectList.map((el) => {
           return (
             <div
-              className={` ${el.slug === "Resonus" ? "col-8 mb-5" : "col-6"}`}
+              className={` ${el.slug === "Resonus" ? "col-lg-7 col-12 mb-5" : "col-lg-6 col-12"}`}
               key={el.slug}
             >
               <Link
@@ -35,6 +42,7 @@ export default function ProjectsPage() {
             </div>
           );
         })}
+        <PortFolioCard />
       </div>
     </div>
   );

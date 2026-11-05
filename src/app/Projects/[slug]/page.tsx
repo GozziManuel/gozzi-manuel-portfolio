@@ -4,6 +4,7 @@ import "../Projectpage.css";
 import { anton } from "@/app/utils/font";
 //
 
+// Creating static param
 export async function generateStaticParams() {
   return ProjectList.map((project) => ({
     slug: project.slug,
@@ -12,26 +13,33 @@ export async function generateStaticParams() {
 
 //
 export default async function ProjectsDetailed({
+  // taking param
   params,
 }: {
   params: { slug: string };
 }) {
   //
+  // Finding specific project by params
   const { slug } = await params;
+
+  // taking all data from specific project
   const project = ProjectList.find((el) => el.slug === slug);
 
-  //
+  // Preventing not found error
   if (!project) {
     <h1>Project Not Found</h1>;
   }
 
+  //
   return (
     <section className="d-flex flex-column  text-light">
       {/* CONTENUTO PRINCIPALE */}
       <div className="py-5 mt-5 ContainerBody">
         <div className="py-4">
           {/*  */}
+
           {/* Pulsante Torna Indietro */}
+
           <div className="mb-4">
             <Link
               href="/Projects"
@@ -46,15 +54,23 @@ export default async function ProjectsDetailed({
           {/* HERO SECTION DEL PROGETTO */}
           <section className="row align-items-center mb-5 pb-4 border-bottom border-secondary">
             <div className="col-lg-5 mb-4 mb-lg-0">
+              {/*  */}
+
+              {/* Date */}
               <span className="badge bg-dark text-light mb-2 px-3 py-2 rounded-pill fw-semibold">
                 {project?.date}
               </span>
+              {/*  */}
+
+              {/* Title */}
               <h1
                 className={`display-4  mb-3 ${anton.className} text-uppercase`}
                 style={{ color: "var(--textcolor)" }}
               >
                 {project?.slug}
               </h1>
+
+              {/* First INFOS */}
               <p className=" text-muted mb-4">{project?.maininfo}</p>
 
               {/* Tech Stack Badges */}
@@ -101,7 +117,7 @@ export default async function ProjectsDetailed({
             </div>
           </section>
 
-          {/* SEZIONE APPROFONDITA: ARCHITETTURA & FILTRI (otherInfos) */}
+          {/* SEZIONE APPROFONDITA: ARCHITETTURA E LOGICA DATI (otherInfos) */}
           <section className="row mb-5 pb-4 border-bottom border-secondary align-items-center">
             <div className="col-lg-8">
               <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
@@ -113,7 +129,7 @@ export default async function ProjectsDetailed({
                 className={`mb-3 ${anton.className} text-uppercase`}
                 style={{ color: "var(--textcolor)" }}
               >
-                Architettura & Logica DB
+                Architettura & Logica Dati
               </h3>
               <p className="text-muted mb-4" style={{ whiteSpace: "pre-line" }}>
                 {project?.otherInfos}
@@ -121,14 +137,14 @@ export default async function ProjectsDetailed({
             </div>
           </section>
 
-          {/* SEZIONE: UX, UI & NOTIFICHE (otherInfos2) */}
+          {/* Interfaccia & Esperienza Utente (otherInfos2) */}
           <section className="row mb-5 pb-4 border-bottom border-secondary">
             <div className="col-lg-4">
               <h3
                 className={`mb-3 ${anton.className} text-uppercase`}
                 style={{ color: "var(--textcolor)" }}
               >
-                User Experience & Interfaccia
+                Interfaccia & Esperienza Utente
               </h3>
               <p className="text-muted" style={{ whiteSpace: "pre-line" }}>
                 {project?.otherInfos2}
@@ -141,7 +157,7 @@ export default async function ProjectsDetailed({
             </div>
           </section>
 
-          {/* SEZIONE: BACKEND, EMAIL & CRONOLOGIA (lastInfo) */}
+          {/* (lastInfo) */}
           <section className="row mb-5 border-bottom border-secondary pb-4">
             <div className="col-lg-8">
               <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
@@ -153,7 +169,9 @@ export default async function ProjectsDetailed({
                 className={`mb-3 ${anton.className} text-uppercase`}
                 style={{ color: "var(--textcolor)" }}
               >
-                Backend
+                {project?.slug === "PocketGuide"
+                  ? "Gestione & Filtrazione Contenuti"
+                  : "Servizi Backend & Comunicazione"}
               </h3>
               <p className="text-muted" style={{ whiteSpace: "pre-line" }}>
                 {project?.lastInfo}
