@@ -4,6 +4,7 @@
   background-color: var(--secondaryColor);
 }
 
+/* ANIMATION FOR CARD PROJECTs */
 .fade-in-card {
   animation: cardFadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
@@ -17,4 +18,15 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+/* arrow Animation for detailed page */
+
+.arrowAnimationDetailed {
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrowAnimationContainerDetailed:hover .arrowAnimationDetailed {
+  transform: translateX(-5px);
 }

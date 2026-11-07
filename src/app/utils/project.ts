@@ -96,6 +96,58 @@ const ProjectList: Projects[] = [
     gif3: "/PocketGuide/PocketGuideGIF3.gif",
     gif4: "/PocketGuide/PocketGuideGIF4.gif",
   },
+
+  // PressStart
+  {
+    slug: "Press-Start",
+    image: "/Press-Start.png",
+    video: "https://www.youtube.com/watch?v=C8FB174vPzc",
+    githublinks: [
+      "Backend: https://github.com/SirioRedGiant/retro_games",
+      "Frontend: https://github.com/GozziManuel/Press-Start",
+    ],
+    Techstack: [
+      "CSS",
+      "REST APIs",
+      "React.js",
+      "HTML",
+      "JavaScript",
+      "TeamWork",
+      "SQL Query",
+    ],
+
+    //
+    maininfo: `
+    Progetto di gruppo sviluppato per trasformare la passione per il retrogaming in un'esperienza e-commerce moderna e altamente immersiva. Il lavoro si è concentrato principalmente sulla progettazione e sullo sviluppo dell'interfaccia Frontend, realizzando un'architettura a componenti React dinamici con un'estetica visiva distintiva ispirata alla cultura synthwave anni '80.
+   
+    `,
+
+    //
+    otherInfos: `
+    Component Architecture Modulare: Progettazione e sviluppo di componenti React riutilizzabili per garantire scalabilità, manutenibilità e coerenza visiva su tutta la piattaforma.
+
+    Integrazione Dati Server-Side: Comunicazione flessibile con il backend Node.js/Express tramite API RESTful per il recupero e la manipolazione delle risorse del catalogo.
+    `,
+
+    //
+    otherInfos2: `
+    Immersive Neon-Dark Aesthetics: Interfaccia utente personalizzata in stile synthwave con tema dark/neon, animazioni fluide e card dei prodotti interattive.
+
+    UI Refinement & Bugfixing: Attività capillare di rifinitura estetica, correzione bug visivi e ottimizzazione del layout su diverse risoluzioni.
+    `,
+
+    //
+    lastInfo: `
+    Advanced Multi-Filtering: Sistema avanzato di ricerca e filtraggio multi-parametro (per Genere, Publisher e Piattaforma) per consentire un'esplorazione rapida e precisa del catalogo prodotti.
+
+    Gestione Dinamica del Catalogo: Rendering ottimizzato delle liste prodotti e aggiornamento in tempo reale dei risultati filtrati.
+    `,
+    date: "06/26 - 06/26",
+    gif1: "/PressStart/Press-StartGIF.gif",
+    gif2: "/PressStart/Press-StartGIF2.gif",
+    gif3: "/PressStart/Press-StartGIF3.gif",
+    gif4: "/PressStart/Press-StartGIF4.gif",
+  },
 ];
 
 export { ProjectList };

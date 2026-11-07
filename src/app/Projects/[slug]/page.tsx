@@ -40,17 +40,44 @@ export default async function ProjectsDetailed({
 
           {/* Pulsante Torna Indietro */}
 
-          <div className="mb-4">
+          <div className=" mb-4">
             <Link
               href="/Projects"
-              className="text-uppercase text-secondary d-inline-flex align-items-center gap-2 "
+              className="text-uppercase text-secondary d-inline-flex align-items-center gap-2 arrowAnimationContainerDetailed "
               style={{ letterSpacing: "1.2px", fontSize: "14px" }}
             >
               <i className="bi bi-arrow-left arrowAnimationDetailed ms-2"></i>
               Torna ai progetti
             </Link>
           </div>
-
+          {project?.slug === "Press-Start" && (
+            <div className="row">
+              <div className="col-12 bg-danger py-4 mb-4 px-5">
+                <h5>
+                  <i className="bi bi-exclamation-triangle me-2"></i>
+                  Nota di Responsabilità
+                </h5>
+                <p className="mb-0">
+                  {" "}
+                  I punti descritti di seguito riassumono esclusivamente le
+                  funzionalità e i moduli di cui mi sono occupato direttamente
+                  nello sviluppo del Frontend. L'applicazione complessiva
+                  realizzata dal team è molto più ricca ed estesa: ti invito a
+                  guardare il video dimostrativo completo{" "}
+                  <span>
+                    <a
+                      href="#linkToVideo"
+                      style={{ color: "yellow" }}
+                      className="fw-bold"
+                    >
+                      (qui)
+                    </a>
+                  </span>{" "}
+                  per vedere la piattaforma in azione in tutte le sue parti.
+                </p>
+              </div>
+            </div>
+          )}
           {/* HERO SECTION DEL PROGETTO */}
           <section className="row align-items-center mb-5 pb-4 border-bottom border-secondary">
             <div className="col-lg-5 mb-4 mb-lg-0">
@@ -180,12 +207,13 @@ export default async function ProjectsDetailed({
           </section>
 
           <p
-            className={`mb-3  text-uppercase`}
+            className={`mb-3  text-uppercase ${anton.className} fs-2`}
             style={{ color: "var(--textcolor)" }}
           >
             Se vuoi vedere tutte le funzioni della webapp ecco qui il link al
             video:{" "}
             <a
+              id="linkToVideo"
               className={`mb-3  text-uppercase`}
               style={{ color: "var(--secondaryColor)" }}
               href={project?.video}

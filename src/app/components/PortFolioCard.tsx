@@ -17,6 +17,9 @@ export default function PortFolioCard() {
           <div
             style={{
               backgroundColor: "var(--secondaryColor)",
+              maxHeight: "480px",
+              paddingBottom: "110px",
+              paddingTop: "110px",
             }}
             className="h-100 text-white d-flex justify-content-center align-items-center text-center"
           >
