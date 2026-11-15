@@ -49,3 +49,38 @@ body {
     width: 96% !important;
   }
 }
+
+/* Main Animations */
+/* Dissolvenza in entrata dal basso al caricamento */
+.fade-in-bottom {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInFromBottom 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInFromBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide */
+.Slide-in-bottom {
+  opacity: 0;
+  /* Aumentiamo a 60px o 80px per farlo sembrare un vero e proprio "arrivo" dal basso */
+  transform: translateY(70px);
+
+  animation: slideUpFromBottom 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideUpFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

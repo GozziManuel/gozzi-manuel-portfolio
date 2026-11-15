@@ -50,11 +50,13 @@ export default async function ProjectsDetailed({
               Torna ai progetti
             </Link>
           </div>
+
+          {/* IF PRESS START PUT REMINDER */}
           {project?.slug === "Press-Start" && (
             <div className="row">
               <div className="col-12 bg-danger py-4 mb-4 px-5">
-                <h5>
-                  <i className="bi bi-exclamation-triangle me-2"></i>
+                <h5 className="text-uppercase">
+                  <i className="bi bi-exclamation-triangle me-2 "></i>
                   Nota di Responsabilità
                 </h5>
                 <p className="mb-0">

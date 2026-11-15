@@ -14,7 +14,12 @@ export default function SkillSection() {
     >
       <div className="ContainerBody p-0 row  ">
         {/* LEFT TEXT */}
-        <div className="col-12 col-lg-2 mb-4">
+        <div
+          className="col-12 col-lg-2 mb-4 Slide-in-bottom"
+          style={{
+            animationDelay: "0.9s",
+          }}
+        >
           <p
             className="text-uppercase"
             style={{
@@ -31,22 +36,41 @@ export default function SkillSection() {
           <div className="col-12 ">
             {/* 1° */}
             <div
-              className="  py-4"
+              className="  py-4 "
               style={{
                 borderTop: "solid 1px var(--borderColor)",
                 borderBottom: "solid 1px var(--borderColor)",
               }}
             >
-              <h3 className={anton.className}>IDEA</h3>
-              <p>Capisco il problema prima di scrivere codice.</p>
+              {/* AnimatioN 1st  */}
+              <div
+                style={{
+                  animationDelay: "1s",
+                }}
+                className="Slide-in-bottom"
+              >
+                <h3 className={anton.className}>IDEA</h3>
+              </div>
+
+              {/* Animation 2nd  */}
+              <div
+                className="Slide-in-bottom"
+                style={{ animationDelay: "1.1s" }}
+              >
+                <p>Capisco il problema prima di scrivere codice.</p>
+              </div>
             </div>
           </div>
 
           {/* 2° */}
           <div className="col-12 pt-4">
             {" "}
-            <h3 className={anton.className}>SVILUPPO</h3>
-            <p>Web e app, testati e documentati.</p>
+            <div className="Slide-in-bottom" style={{ animationDelay: "1.3s" }}>
+              <h3 className={anton.className}>SVILUPPO</h3>
+            </div>
+            <div className="Slide-in-bottom" style={{ animationDelay: "1.3s" }}>
+              <p>Web e app, testati e documentati.</p>{" "}
+            </div>
           </div>
         </div>
 
@@ -61,15 +85,23 @@ export default function SkillSection() {
               borderBottom: "solid 1px var(--borderColor)",
             }}
           >
-            <h3 className={anton.className}>DESIGN</h3>
-            <p>Interfacce e architettura decise insieme.</p>
+            <div className="Slide-in-bottom" style={{ animationDelay: "1.1s" }}>
+              <h3 className={anton.className}>DESIGN</h3>
+            </div>
+            <div className="Slide-in-bottom" style={{ animationDelay: "1.1s" }}>
+              <p>Interfacce e architettura decise insieme.</p>
+            </div>
           </div>
 
           {/* 2° */}
           <div className="col-12  pt-4">
             {" "}
-            <h3 className={anton.className}>FINE</h3>
-            <p>Rilascio, monitoraggio e passaggio di consegne.</p>
+            <div className="Slide-in-bottom" style={{ animationDelay: "1.3s" }}>
+              <h3 className={anton.className}>FINE</h3>
+            </div>
+            <div className="Slide-in-bottom" style={{ animationDelay: "1.3s" }}>
+              <p>Rilascio, monitoraggio e passaggio di consegne.</p>
+            </div>
           </div>
         </div>
       </div>

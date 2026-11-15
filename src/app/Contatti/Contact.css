@@ -1,0 +1,69 @@
+/* Main Hero */
+
+.contact-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+.contact-title {
+  font-size: 110px;
+  margin: 20px 0;
+}
+
+.contact-title span,
+.accent {
+  color: var(--secondaryColor);
+}
+
+/* CARD */
+.contact-card {
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 16px;
+  background: rgba(128, 128, 128, 0.035);
+}
+
+.contact-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+  color: var(--textcolor);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-link:last-child {
+  border: none;
+}
+
+.contact-link small {
+  font-size: 11px;
+  letter-spacing: 3px;
+  opacity: 0.55;
+}
+
+.contact-link p {
+  margin: 8px 0 0;
+  font-weight: 600;
+}
+
+.contact-link:hover {
+  color: var(--secondaryColor);
+  transform: translateX(5px);
+}
+
+.availability-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--secondaryColor);
+}
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 65px;
+  }
+}

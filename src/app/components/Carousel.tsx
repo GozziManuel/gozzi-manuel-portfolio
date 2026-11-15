@@ -26,7 +26,10 @@ export default function Carousel() {
 
   return (
     <div className="row w-100">
-      <div className={`col-lg-3 col-12 ${anton.className}`}>
+      <div
+        className={`col-lg-3 col-12 ${anton.className} Slide-in-bottom`}
+        style={{ animationDelay: "1s" }}
+      >
         {" "}
         <h1 className="mb-5" style={{ fontSize: "60px" }}>
           {" "}
@@ -34,9 +37,9 @@ export default function Carousel() {
         </h1>
       </div>
       <Link
-        className="col-lg-9 col-12 ColContainerCarousel"
+        className="col-lg-9 col-12 ColContainerCarousel Slide-in-bottom"
         href="/Projects"
-        style={{ color: "var(--textcolor)" }}
+        style={{ color: "var(--textcolor)", animationDelay: "1.1s" }}
       >
         <div style={{ cursor: "pointer" }}>
           <div className="CarouselContainer w-100" style={{}}>
@@ -52,7 +55,7 @@ export default function Carousel() {
               {images[imageIndex].replaceAll("/", "").replaceAll(".png", "")}
             </div>
           </div>
-          <div className="mt-3">
+          <div className="mt-3 ">
             <h2 className={anton.className}>
               VEDI TUTTI I PROGETTI NEL DETTAGLIO
               <i className="bi bi-arrow-right arrowAnimationCarousel fs-3 ms-3"></i>
