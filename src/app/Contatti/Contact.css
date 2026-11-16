@@ -4,7 +4,6 @@
   font-size: 11px;
   letter-spacing: 3px;
   font-weight: 700;
-  opacity: 0.6;
 }
 
 .contact-title {
@@ -41,20 +40,25 @@
 
 .contact-link small {
   font-size: 11px;
+  color: var(--otherColor);
   letter-spacing: 3px;
-  opacity: 0.55;
 }
 
 .contact-link p {
   margin: 8px 0 0;
   font-weight: 600;
 }
-
+/* Animation on links  */
 .contact-link:hover {
-  color: var(--secondaryColor);
+  color: var(--secondaryColor) !important;
+  transform: translateX(5px);
+}
+.contact-link:hover small {
+  color: var(--secondaryColor) !important;
   transform: translateX(5px);
 }
 
+/*  */
 .availability-dot {
   width: 9px;
   height: 9px;

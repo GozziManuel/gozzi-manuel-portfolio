@@ -39,3 +39,13 @@
 .navbar-brand:hover {
   background-position: 0 0;
 }
+
+/* navlinks FOcus */
+
+.activeNavlink {
+  color: var(--secondaryColor) !important;
+}
+
+.activatedIndexRoute {
+  background-image: linear-gradient(var(--secondaryColor) 100%);
+}

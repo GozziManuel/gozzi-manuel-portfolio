@@ -34,9 +34,9 @@
 .story-number {
   font-size: 15px;
   font-weight: 800;
-  opacity: 0.45;
   padding-top: 7px;
   letter-spacing: 2px;
+  color: var(--secondaryColor);
 }
 
 /* H3 left column */

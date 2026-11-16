@@ -5,6 +5,7 @@
   --secondaryColor: #2b3fd6;
   --transparentblack: rgba(0, 0, 0, 0.904);
   --buttonColorText: #f4f2ec;
+  --otherColor: #0000009f;
   --borderColor: #888888;
 }
 
@@ -68,7 +69,6 @@ body {
 /* Slide */
 .Slide-in-bottom {
   opacity: 0;
-  /* Aumentiamo a 60px o 80px per farlo sembrare un vero e proprio "arrivo" dal basso */
   transform: translateY(70px);
 
   animation: slideUpFromBottom 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -82,5 +82,41 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.Slide-in-left {
+  opacity: 0;
+  transform: translateX(70px);
+
+  animation: slideUpFromLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideUpFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.Slide-in-Right {
+  opacity: 0;
+  transform: translateX(-70px);
+
+  animation: slideUpFromRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideUpFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

@@ -1,9 +1,25 @@
+"use client";
 import Link from "next/link";
 import { anton } from "../utils/font";
 import "./ComponentsCSS/navbar.css";
+import { usePathname } from "next/navigation";
 
 //
+interface Navlinks {
+  path: string;
+  name: string;
+}
+//
 export default function Navbar() {
+  // Finding pathname For navlinks
+  const pathname = usePathname();
+
+  // Navlinks array
+  const navLinksArray: Navlinks[] = [
+    { path: "/Projects", name: "Progetti" },
+    { path: "/AboutMe", name: "Chi Sono" },
+    { path: "/Contatti", name: "Contatti" },
+  ];
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light fixed-top navbar-custom  text-uppercase d-flex justify-content-center"
@@ -11,7 +27,10 @@ export default function Navbar() {
     >
       <div className="container-fluid navContainer" id="navContainer">
         {/* <!-- Logo / Nome --> */}
-        <Link className={`navbar-brand ${anton.className}`} href="/">
+        <Link
+          className={`navbar-brand ${anton.className} ${pathname === "/" ? "activatedIndexRoute" : ""}`}
+          href="/"
+        >
           HOMEPAGE
         </Link>
 
@@ -31,21 +50,18 @@ export default function Navbar() {
         {/* <!-- Menu Link --> */}
         <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="navbar-ul navbar-nav mx-auto mb-2 mb-lg-0 gap-2">
-            <li className="nav-item">
-              <Link className="nav-link" href="/Projects">
-                Progetti
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/AboutMe">
-                Chi Sono
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/Contatti">
-                Contatti
-              </Link>
-            </li>
+            {navLinksArray.map((el, id) => {
+              return (
+                <li className="nav-item" key={id}>
+                  <Link
+                    className={`nav-link ${pathname === el.path ? "activeNavlink" : ""}`}
+                    href={el.path}
+                  >
+                    {el.name}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           {/* <!-- Tasto d'azione a destra --> */}

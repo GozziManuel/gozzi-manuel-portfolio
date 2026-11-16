@@ -30,3 +30,19 @@
 .arrowAnimationContainerDetailed:hover .arrowAnimationDetailed {
   transform: translateX(-5px);
 }
+
+/* SkillBadge */
+
+.skillBadge {
+  letter-spacing: 1.2px;
+  border-radius: 0 !important;
+  cursor: pointer;
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+.skillBadge:hover {
+  color: white;
+  background-color: var(--secondaryColor) !important;
+
+  transform: translateY(-4px);
+}

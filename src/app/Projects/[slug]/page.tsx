@@ -40,7 +40,7 @@ export default async function ProjectsDetailed({
 
           {/* Pulsante Torna Indietro */}
 
-          <div className=" mb-4">
+          <div className=" mb-4 Slide-in-Right">
             <Link
               href="/Projects"
               className="text-uppercase text-secondary d-inline-flex align-items-center gap-2 arrowAnimationContainerDetailed "
@@ -86,33 +86,37 @@ export default async function ProjectsDetailed({
               {/*  */}
 
               {/* Date */}
-              <span className="badge bg-dark text-light mb-2 px-3 py-2 rounded-pill fw-semibold">
+              <span
+                className="badge bg-dark text-light mb-2 px-3 py-2 rounded-pill fw-semibold Slide-in-Right"
+                style={{ animationDelay: "0.2s" }}
+              >
                 {project?.date}
               </span>
               {/*  */}
 
               {/* Title */}
               <h1
-                className={`display-4  mb-3 ${anton.className} text-uppercase`}
-                style={{ color: "var(--textcolor)" }}
+                className={`display-4  mb-3 ${anton.className} text-uppercase Slide-in-Right`}
+                style={{ color: "var(--textcolor)", animationDelay: "0.4s" }}
               >
                 {project?.slug}
               </h1>
 
               {/* First INFOS */}
-              <p className=" text-muted mb-4">{project?.maininfo}</p>
+              <p
+                className=" text-muted mb-4 Slide-in-Right"
+                style={{ animationDelay: "0.6s" }}
+              >
+                {project?.maininfo}
+              </p>
 
               {/* Tech Stack Badges */}
               <div className="d-flex flex-wrap gap-2 mb-4">
                 {project?.Techstack.map((tech, index) => (
                   <span
                     key={index}
-                    className="badge fw-light border border-dark px-3 py-2 text-uppercase"
-                    style={{
-                      letterSpacing: "1.2px",
-                      backgroundColor: "var(--secondaryColor)",
-                      borderRadius: "0  ",
-                    }}
+                    className="badge fw-light border border-dark px-3 py-2 text-uppercase skillBadge Slide-in-Right"
+                    style={{ animationDelay: `${(index + 1) * 0.3}s` }}
                   >
                     {tech}
                   </span>
@@ -123,13 +127,15 @@ export default async function ProjectsDetailed({
               <div className="d-flex flex-wrap gap-3">
                 {project?.githublinks.map((link, idx) => {
                   const [label, url] = link.split(": ");
+
                   return (
                     <a
                       key={idx}
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className=" px-4 py-2 buttonMain text-uppercase"
+                      style={{ animationDelay: `${idx + 2.3}s` }}
+                      className=" px-4 py-2 buttonMain text-uppercase Slide-in-Right"
                     >
                       {label}
                     </a>
@@ -139,7 +145,10 @@ export default async function ProjectsDetailed({
             </div>
 
             {/* Immagine Principale */}
-            <div className="col-lg-7">
+            <div
+              className="col-lg-7 Slide-in-left"
+              style={{ animationDelay: "0.6s" }}
+            >
               <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
                 <img src={project?.gif1} alt="MainIMG" className="w-100" />
               </div>
@@ -148,19 +157,25 @@ export default async function ProjectsDetailed({
 
           {/* SEZIONE APPROFONDITA: ARCHITETTURA E LOGICA DATI (otherInfos) */}
           <section className="row mb-5 pb-4 border-bottom border-secondary align-items-center">
-            <div className="col-lg-8">
+            <div
+              className="col-lg-8 Slide-in-Right "
+              style={{ animationDelay: "0.8s" }}
+            >
               <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
                 <img src={project?.gif2} alt="MainIMG" className="w-100" />
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 ">
               <h3
-                className={`mb-3 ${anton.className} text-uppercase`}
-                style={{ color: "var(--textcolor)" }}
+                className={`mb-3 ${anton.className} text-uppercase Slide-in-left`}
+                style={{ color: "var(--textcolor)", animationDelay: "0.8s" }}
               >
                 Architettura & Logica Dati
               </h3>
-              <p className="text-muted mb-4" style={{ whiteSpace: "pre-line" }}>
+              <p
+                className="text-muted mb-4 Slide-in-left"
+                style={{ whiteSpace: "pre-line", animationDelay: "0.9s" }}
+              >
                 {project?.otherInfos}
               </p>
             </div>
@@ -170,16 +185,22 @@ export default async function ProjectsDetailed({
           <section className="row mb-5 pb-4 border-bottom border-secondary">
             <div className="col-lg-4">
               <h3
-                className={`mb-3 ${anton.className} text-uppercase`}
-                style={{ color: "var(--textcolor)" }}
+                className={`mb-3 ${anton.className} text-uppercase Slide-in-Right`}
+                style={{ color: "var(--textcolor)", animationDelay: "1s" }}
               >
                 Interfaccia & Esperienza Utente
               </h3>
-              <p className="text-muted" style={{ whiteSpace: "pre-line" }}>
+              <p
+                className="text-muted Slide-in-Right"
+                style={{ whiteSpace: "pre-line", animationDelay: "1.1s" }}
+              >
                 {project?.otherInfos2}
               </p>
             </div>
-            <div className="col-lg-8">
+            <div
+              className="col-lg-8 Slide-in-left"
+              style={{ animationDelay: "1s" }}
+            >
               <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
                 <img src={project?.gif3} alt="MainIMG" className="w-100" />
               </div>
@@ -188,21 +209,27 @@ export default async function ProjectsDetailed({
 
           {/* (lastInfo) */}
           <section className="row mb-5 border-bottom border-secondary pb-4">
-            <div className="col-lg-8">
+            <div
+              className="col-lg-8 Slide-in-Right"
+              style={{ animationDelay: "1.2s" }}
+            >
               <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
                 <img src={project?.gif4} alt="MainIMG" className="w-100" />
               </div>
             </div>
             <div className="col-lg-4">
               <h3
-                className={`mb-3 ${anton.className} text-uppercase`}
-                style={{ color: "var(--textcolor)" }}
+                className={`mb-3 ${anton.className} text-uppercase Slide-in-left`}
+                style={{ color: "var(--textcolor)", animationDelay: "1.2s" }}
               >
                 {project?.slug === "PocketGuide"
                   ? "Gestione & Filtrazione Contenuti"
                   : "Servizi Backend & Comunicazione"}
               </h3>
-              <p className="text-muted" style={{ whiteSpace: "pre-line" }}>
+              <p
+                className="text-muted Slide-in-left"
+                style={{ whiteSpace: "pre-line", animationDelay: "1.3s" }}
+              >
                 {project?.lastInfo}
               </p>
             </div>
