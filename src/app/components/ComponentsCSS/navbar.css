@@ -49,3 +49,6 @@
 .activatedIndexRoute {
   background-image: linear-gradient(var(--secondaryColor) 100%);
 }
+.activatedSecondIndexRoute {
+  background-image: linear-gradient(var(--secondaryColor) 100%);
+}

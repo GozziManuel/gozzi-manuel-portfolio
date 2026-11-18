@@ -65,14 +65,12 @@ export default function Navbar() {
           </ul>
 
           {/* <!-- Tasto d'azione a destra --> */}
-          <button className="d-flex">
-            <Link
-              className="btn btn-nav-cta d-flex align-items-center gap-2"
-              href="/login"
-            >
-              <span>Login</span>
-            </Link>
-          </button>
+          <Link
+            className={`navbar-brand ${anton.className} ${pathname === "/WriteMe" ? "activatedSecondIndexRoute" : ""}`}
+            href="/WriteMe"
+          >
+            SCRIVIMi
+          </Link>
         </div>
       </div>
     </nav>

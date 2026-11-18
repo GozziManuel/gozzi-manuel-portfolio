@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ProjectList } from "../../utils/project";
 import "../Projectpage.css";
 import { anton } from "@/app/utils/font";
+import NotFound from "@/app/not-found";
 //
 
 // Creating static param
@@ -27,232 +28,231 @@ export default async function ProjectsDetailed({
 
   // Preventing not found error
   if (!project) {
-    <h1>Project Not Found</h1>;
-  }
+    return <NotFound />;
+  } else
+    //
+    return (
+      <section className="d-flex flex-column  text-light">
+        {/* CONTENUTO PRINCIPALE */}
+        <div className="py-5 mt-5 ContainerBody">
+          <div className="py-4">
+            {/*  */}
 
-  //
-  return (
-    <section className="d-flex flex-column  text-light">
-      {/* CONTENUTO PRINCIPALE */}
-      <div className="py-5 mt-5 ContainerBody">
-        <div className="py-4">
-          {/*  */}
+            {/* Pulsante Torna Indietro */}
 
-          {/* Pulsante Torna Indietro */}
-
-          <div className=" mb-4 Slide-in-Right">
-            <Link
-              href="/Projects"
-              className="text-uppercase text-secondary d-inline-flex align-items-center gap-2 arrowAnimationContainerDetailed "
-              style={{ letterSpacing: "1.2px", fontSize: "14px" }}
-            >
-              <i className="bi bi-arrow-left arrowAnimationDetailed ms-2"></i>
-              Torna ai progetti
-            </Link>
-          </div>
-
-          {/* IF PRESS START PUT REMINDER */}
-          {project?.slug === "Press-Start" && (
-            <div className="row">
-              <div className="col-12 bg-danger py-4 mb-4 px-5">
-                <h5 className="text-uppercase">
-                  <i className="bi bi-exclamation-triangle me-2 "></i>
-                  Nota di Responsabilità
-                </h5>
-                <p className="mb-0">
-                  {" "}
-                  I punti descritti di seguito riassumono esclusivamente le
-                  funzionalità e i moduli di cui mi sono occupato direttamente
-                  nello sviluppo del Frontend. L'applicazione complessiva
-                  realizzata dal team è molto più ricca ed estesa: ti invito a
-                  guardare il video dimostrativo completo{" "}
-                  <span>
-                    <a
-                      href="#linkToVideo"
-                      style={{ color: "yellow" }}
-                      className="fw-bold"
-                    >
-                      (qui)
-                    </a>
-                  </span>{" "}
-                  per vedere la piattaforma in azione in tutte le sue parti.
-                </p>
-              </div>
+            <div className=" mb-4 Slide-in-Right">
+              <Link
+                href="/Projects"
+                className="text-uppercase text-secondary d-inline-flex align-items-center gap-2 arrowAnimationContainerDetailed "
+                style={{ letterSpacing: "1.2px", fontSize: "14px" }}
+              >
+                <i className="bi bi-arrow-left arrowAnimationDetailed ms-2"></i>
+                Torna ai progetti
+              </Link>
             </div>
-          )}
-          {/* HERO SECTION DEL PROGETTO */}
-          <section className="row align-items-center mb-5 pb-4 border-bottom border-secondary">
-            <div className="col-lg-5 mb-4 mb-lg-0">
-              {/*  */}
 
-              {/* Date */}
-              <span
-                className="badge bg-dark text-light mb-2 px-3 py-2 rounded-pill fw-semibold Slide-in-Right"
-                style={{ animationDelay: "0.2s" }}
-              >
-                {project?.date}
-              </span>
-              {/*  */}
+            {/* IF PRESS START PUT REMINDER */}
+            {project?.slug === "Press-Start" && (
+              <div className="row">
+                <div className="col-12 bg-danger py-4 mb-4 px-5">
+                  <h5 className="text-uppercase">
+                    <i className="bi bi-exclamation-triangle me-2 "></i>
+                    Nota di Responsabilità
+                  </h5>
+                  <p className="mb-0">
+                    {" "}
+                    I punti descritti di seguito riassumono esclusivamente le
+                    funzionalità e i moduli di cui mi sono occupato direttamente
+                    nello sviluppo del Frontend. L'applicazione complessiva
+                    realizzata dal team è molto più ricca ed estesa: ti invito a
+                    guardare il video dimostrativo completo{" "}
+                    <span>
+                      <a
+                        href="#linkToVideo"
+                        style={{ color: "yellow" }}
+                        className="fw-bold"
+                      >
+                        (qui)
+                      </a>
+                    </span>{" "}
+                    per vedere la piattaforma in azione in tutte le sue parti.
+                  </p>
+                </div>
+              </div>
+            )}
+            {/* HERO SECTION DEL PROGETTO */}
+            <section className="row align-items-center mb-5 pb-4 border-bottom border-secondary">
+              <div className="col-lg-5 mb-4 mb-lg-0">
+                {/*  */}
 
-              {/* Title */}
-              <h1
-                className={`display-4  mb-3 ${anton.className} text-uppercase Slide-in-Right`}
-                style={{ color: "var(--textcolor)", animationDelay: "0.4s" }}
-              >
-                {project?.slug}
-              </h1>
+                {/* Date */}
+                <span
+                  className="badge bg-dark text-light mb-2 px-3 py-2 rounded-pill fw-semibold Slide-in-Right"
+                  style={{ animationDelay: "0.2s" }}
+                >
+                  {project?.date}
+                </span>
+                {/*  */}
 
-              {/* First INFOS */}
-              <p
-                className=" text-muted mb-4 Slide-in-Right"
+                {/* Title */}
+                <h1
+                  className={`display-4  mb-3 ${anton.className} text-uppercase Slide-in-Right`}
+                  style={{ color: "var(--textcolor)", animationDelay: "0.4s" }}
+                >
+                  {project?.slug}
+                </h1>
+
+                {/* First INFOS */}
+                <p
+                  className=" text-muted mb-4 Slide-in-Right"
+                  style={{ animationDelay: "0.6s" }}
+                >
+                  {project?.maininfo}
+                </p>
+
+                {/* Tech Stack Badges */}
+                <div className="d-flex flex-wrap gap-2 mb-4">
+                  {project?.Techstack.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="badge fw-light border border-dark px-3 py-2 text-uppercase skillBadge Slide-in-Right"
+                      style={{ animationDelay: `${(index + 1) * 0.3}s` }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* CTA Links (Demo & GitHub) */}
+                <div className="d-flex flex-wrap gap-3">
+                  {project?.githublinks.map((link, idx) => {
+                    const [label, url] = link.split(": ");
+
+                    return (
+                      <a
+                        key={idx}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ animationDelay: `${idx + 2.3}s` }}
+                        className=" px-4 py-2 buttonMain text-uppercase Slide-in-Right"
+                      >
+                        {label}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Immagine Principale */}
+              <div
+                className="col-lg-7 Slide-in-left"
                 style={{ animationDelay: "0.6s" }}
               >
-                {project?.maininfo}
-              </p>
-
-              {/* Tech Stack Badges */}
-              <div className="d-flex flex-wrap gap-2 mb-4">
-                {project?.Techstack.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="badge fw-light border border-dark px-3 py-2 text-uppercase skillBadge Slide-in-Right"
-                    style={{ animationDelay: `${(index + 1) * 0.3}s` }}
-                  >
-                    {tech}
-                  </span>
-                ))}
+                <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
+                  <img src={project?.gif1} alt="MainIMG" className="w-100" />
+                </div>
               </div>
+            </section>
 
-              {/* CTA Links (Demo & GitHub) */}
-              <div className="d-flex flex-wrap gap-3">
-                {project?.githublinks.map((link, idx) => {
-                  const [label, url] = link.split(": ");
-
-                  return (
-                    <a
-                      key={idx}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ animationDelay: `${idx + 2.3}s` }}
-                      className=" px-4 py-2 buttonMain text-uppercase Slide-in-Right"
-                    >
-                      {label}
-                    </a>
-                  );
-                })}
+            {/* SEZIONE APPROFONDITA: ARCHITETTURA E LOGICA DATI (otherInfos) */}
+            <section className="row mb-5 pb-4 border-bottom border-secondary align-items-center">
+              <div
+                className="col-lg-8 Slide-in-Right "
+                style={{ animationDelay: "0.8s" }}
+              >
+                <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
+                  <img src={project?.gif2} alt="MainIMG" className="w-100" />
+                </div>
               </div>
-            </div>
+              <div className="col-lg-4 ">
+                <h3
+                  className={`mb-3 ${anton.className} text-uppercase Slide-in-left`}
+                  style={{ color: "var(--textcolor)", animationDelay: "0.8s" }}
+                >
+                  Architettura & Logica Dati
+                </h3>
+                <p
+                  className="text-muted mb-4 Slide-in-left"
+                  style={{ whiteSpace: "pre-line", animationDelay: "0.9s" }}
+                >
+                  {project?.otherInfos}
+                </p>
+              </div>
+            </section>
 
-            {/* Immagine Principale */}
-            <div
-              className="col-lg-7 Slide-in-left"
-              style={{ animationDelay: "0.6s" }}
+            {/* Interfaccia & Esperienza Utente (otherInfos2) */}
+            <section className="row mb-5 pb-4 border-bottom border-secondary">
+              <div className="col-lg-4">
+                <h3
+                  className={`mb-3 ${anton.className} text-uppercase Slide-in-Right`}
+                  style={{ color: "var(--textcolor)", animationDelay: "1s" }}
+                >
+                  Interfaccia & Esperienza Utente
+                </h3>
+                <p
+                  className="text-muted Slide-in-Right"
+                  style={{ whiteSpace: "pre-line", animationDelay: "1.1s" }}
+                >
+                  {project?.otherInfos2}
+                </p>
+              </div>
+              <div
+                className="col-lg-8 Slide-in-left"
+                style={{ animationDelay: "1s" }}
+              >
+                <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
+                  <img src={project?.gif3} alt="MainIMG" className="w-100" />
+                </div>
+              </div>
+            </section>
+
+            {/* (lastInfo) */}
+            <section className="row mb-5 border-bottom border-secondary pb-4">
+              <div
+                className="col-lg-8 Slide-in-Right"
+                style={{ animationDelay: "1.2s" }}
+              >
+                <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
+                  <img src={project?.gif4} alt="MainIMG" className="w-100" />
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <h3
+                  className={`mb-3 ${anton.className} text-uppercase Slide-in-left`}
+                  style={{ color: "var(--textcolor)", animationDelay: "1.2s" }}
+                >
+                  {project?.slug === "PocketGuide"
+                    ? "Gestione & Filtrazione Contenuti"
+                    : "Servizi Backend & Comunicazione"}
+                </h3>
+                <p
+                  className="text-muted Slide-in-left"
+                  style={{ whiteSpace: "pre-line", animationDelay: "1.3s" }}
+                >
+                  {project?.lastInfo}
+                </p>
+              </div>
+            </section>
+
+            <p
+              className={`mb-3  text-uppercase ${anton.className} fs-2`}
+              style={{ color: "var(--textcolor)" }}
             >
-              <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
-                <img src={project?.gif1} alt="MainIMG" className="w-100" />
-              </div>
-            </div>
-          </section>
-
-          {/* SEZIONE APPROFONDITA: ARCHITETTURA E LOGICA DATI (otherInfos) */}
-          <section className="row mb-5 pb-4 border-bottom border-secondary align-items-center">
-            <div
-              className="col-lg-8 Slide-in-Right "
-              style={{ animationDelay: "0.8s" }}
-            >
-              <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
-                <img src={project?.gif2} alt="MainIMG" className="w-100" />
-              </div>
-            </div>
-            <div className="col-lg-4 ">
-              <h3
-                className={`mb-3 ${anton.className} text-uppercase Slide-in-left`}
-                style={{ color: "var(--textcolor)", animationDelay: "0.8s" }}
+              Se vuoi vedere tutte le funzioni della webapp ecco qui il link al
+              video:{" "}
+              <a
+                id="linkToVideo"
+                className={`mb-3  text-uppercase`}
+                style={{ color: "var(--secondaryColor)" }}
+                href={project?.video}
+                target="_blank"
               >
-                Architettura & Logica Dati
-              </h3>
-              <p
-                className="text-muted mb-4 Slide-in-left"
-                style={{ whiteSpace: "pre-line", animationDelay: "0.9s" }}
-              >
-                {project?.otherInfos}
-              </p>
-            </div>
-          </section>
-
-          {/* Interfaccia & Esperienza Utente (otherInfos2) */}
-          <section className="row mb-5 pb-4 border-bottom border-secondary">
-            <div className="col-lg-4">
-              <h3
-                className={`mb-3 ${anton.className} text-uppercase Slide-in-Right`}
-                style={{ color: "var(--textcolor)", animationDelay: "1s" }}
-              >
-                Interfaccia & Esperienza Utente
-              </h3>
-              <p
-                className="text-muted Slide-in-Right"
-                style={{ whiteSpace: "pre-line", animationDelay: "1.1s" }}
-              >
-                {project?.otherInfos2}
-              </p>
-            </div>
-            <div
-              className="col-lg-8 Slide-in-left"
-              style={{ animationDelay: "1s" }}
-            >
-              <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
-                <img src={project?.gif3} alt="MainIMG" className="w-100" />
-              </div>
-            </div>
-          </section>
-
-          {/* (lastInfo) */}
-          <section className="row mb-5 border-bottom border-secondary pb-4">
-            <div
-              className="col-lg-8 Slide-in-Right"
-              style={{ animationDelay: "1.2s" }}
-            >
-              <div className="position-relative rounded-4 overflow-hidden shadow-lg border border-secondary">
-                <img src={project?.gif4} alt="MainIMG" className="w-100" />
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <h3
-                className={`mb-3 ${anton.className} text-uppercase Slide-in-left`}
-                style={{ color: "var(--textcolor)", animationDelay: "1.2s" }}
-              >
-                {project?.slug === "PocketGuide"
-                  ? "Gestione & Filtrazione Contenuti"
-                  : "Servizi Backend & Comunicazione"}
-              </h3>
-              <p
-                className="text-muted Slide-in-left"
-                style={{ whiteSpace: "pre-line", animationDelay: "1.3s" }}
-              >
-                {project?.lastInfo}
-              </p>
-            </div>
-          </section>
-
-          <p
-            className={`mb-3  text-uppercase ${anton.className} fs-2`}
-            style={{ color: "var(--textcolor)" }}
-          >
-            Se vuoi vedere tutte le funzioni della webapp ecco qui il link al
-            video:{" "}
-            <a
-              id="linkToVideo"
-              className={`mb-3  text-uppercase`}
-              style={{ color: "var(--secondaryColor)" }}
-              href={project?.video}
-              target="_blank"
-            >
-              Clicca qui
-            </a>
-          </p>
+                Clicca qui
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
 }

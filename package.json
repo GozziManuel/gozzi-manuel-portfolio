@@ -11,10 +11,11 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.2",
-    "next": "16.4.3",
+    "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "react-fast-marquee": "^1.6.5"
+    "react-fast-marquee": "^1.6.5",
+    "resend": "^6.38.1"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -22,7 +23,7 @@
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.4.3",
+    "eslint-config-next": "16.4.6",
     "typescript": "^5"
   }
 }
