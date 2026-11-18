@@ -72,8 +72,8 @@ export default function HeroSection() {
                 }}
               >
                 {/* <!-- Main CTA Button --> */}
-                <Link href="/Contatti" className="buttonMain">
-                  <span className="me-2">SCRIVIMI SU WHATSAPP</span>
+                <Link href="/WriteMe" className="buttonMain">
+                  <span className="me-2">MANDAMI UN MESSAGGIO</span>
                   <i className="bi bi-arrow-right arrowAnimation"></i>
                 </Link>
               </div>

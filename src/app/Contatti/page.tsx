@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { anton } from "../utils/font";
 import "./Contact.css";
 
@@ -64,12 +65,20 @@ export default function ContactMePage() {
               </p>
 
               <div
-                className="d-flex align-items-center gap-2 mt-4 Slide-in-bottom"
-                style={{ animationDelay: "1s" }}
+                className="d-flex align-items-center gap-2 mt-4 Slide-in-Right"
+                style={{ animationDelay: "1s", marginBottom: "30px" }}
               >
                 <span className="availability-dot"></span>
                 <small className="fw-bold">APERTO A NUOVE OPPORTUNITÀ</small>
               </div>
+              <Link
+                href="/WriteMe"
+                className="buttonMain Slide-in-bottom"
+                style={{ animationDelay: "1.2s", display: "inline-block" }}
+              >
+                <span className="me-2 ">Scrivimi direttamente qui</span>
+                <i className="bi bi-arrow-right arrowAnimation"></i>
+              </Link>
             </div>
 
             {/* CONTATTI */}

@@ -123,7 +123,7 @@ export default function WriteMe() {
                 >
                   <button
                     type="submit"
-                    className="btn btn-dark px-4 py-2 rounded-pill text-uppercase fw-semibold"
+                    className=" btn buttonMain px-4 py-2 text-uppercase fw-semibold"
                   >
                     Invia Messaggio
                   </button>
