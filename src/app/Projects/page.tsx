@@ -30,7 +30,7 @@ export default function ProjectsPage() {
         {ProjectList.map((el, id) => {
           return (
             <div
-              className={` ${el.slug === "Resonus" ? "col-lg-7 col-12 mb-5" : "col-lg-6 col-12"} mb-0 mb-sm-5 fade-in-bottom`}
+              className={` ${el.slug === "Resonus" ? "col-lg-7 col-12 mb-5" : "col-lg-6 col-12 "} mb-5 fade-in-bottom`}
               key={el.slug}
               style={{ animationDelay: `${(id + 1) * 0.18}s` }}
             >
@@ -59,20 +59,6 @@ export default function ProjectsPage() {
         >
           <PortFolioCard />
         </div>
-      </div>
-
-      <div className="d-flex row w-100 " style={{ marginTop: "100px" }}>
-        <h1
-          className={`col-5 ${anton.className}  col-lg-5 col-12 mb-5 mb-lg-0`}
-        >
-          Primi Progetti Boolean <br />{" "}
-          <span className="">Progetti più piccoli</span>
-        </h1>
-
-        {/* Mapping Projects for Unic project on click */}
-        {/* {ProjectList.map((el) => {
-          
-        })} */}
       </div>
     </div>
   );

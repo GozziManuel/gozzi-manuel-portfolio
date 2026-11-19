@@ -37,7 +37,7 @@ export default function ContactMePage() {
             </p>
           </div>
 
-          <div className="row g-5 ">
+          <div className="row gy-5 ">
             {/* PRESENTAZIONE */}
             <div className="col-lg-6 ">
               <span
