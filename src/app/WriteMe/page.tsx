@@ -3,16 +3,33 @@
 import { type FormEvent, useState } from "react";
 import { anton } from "../utils/font";
 import { sendingEmail } from "../lib/contact";
+import "./writeMe.css";
 
+type Status = "sended" | "sending" | "error" | "idle";
+
+//
 export default function WriteMe() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
+
+  //
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    //
+    setStatus("sending");
+    setError("");
 
+    //
     // getting formDATA
     const form = e.currentTarget;
     const sending = await sendingEmail(new FormData(form));
-
-    console.log(sending);
+    if (!sending.ok) {
+      setStatus("error");
+      setError(sending.error);
+    } else {
+      setStatus("sended");
+      form.reset();
+    }
   };
   return (
     <div className="ContainerBody flex-column ">
@@ -70,7 +87,6 @@ export default function WriteMe() {
                     name="name"
                     className="form-control rounded-3 py-2"
                     placeholder="Il tuo nome"
-                    required
                   />
                 </div>
 
@@ -91,7 +107,6 @@ export default function WriteMe() {
                     name="email"
                     className="form-control rounded-3 py-2"
                     placeholder="nome@esempio.com"
-                    required
                   />
                 </div>
 
@@ -112,7 +127,6 @@ export default function WriteMe() {
                     rows={4}
                     className="form-control rounded-3 py-2"
                     placeholder="Scrivi qui il tuo messaggio..."
-                    required
                   />
                 </div>
 
@@ -123,10 +137,20 @@ export default function WriteMe() {
                 >
                   <button
                     type="submit"
+                    disabled={status === "sending"}
                     className=" btn buttonMain px-4 py-2 text-uppercase fw-semibold"
                   >
-                    Invia Messaggio
+                    {status === "sending" ? "Inviando..." : "Invia Messaggio"}
                   </button>
+
+                  {status === "error" && (
+                    <div className="MessageContainer errorMessage">{error}</div>
+                  )}
+                  {status === "sended" && (
+                    <div className="MessageContainer SuccessMessage">
+                      Messaggio Inviato!
+                    </div>
+                  )}
                 </div>
               </form>
             </div>

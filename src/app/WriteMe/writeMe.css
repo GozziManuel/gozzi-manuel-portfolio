@@ -1,0 +1,19 @@
+.MessageContainer {
+  letter-spacing: 1.3px;
+  margin-top: 10px;
+  padding: 15px 30px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  color: var(--buttonColorText) !important;
+  border-radius: 0 !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.SuccessMessage {
+  background-color: rgb(0, 99, 0);
+}
+
+.errorMessage {
+  background-color: red;
+}
